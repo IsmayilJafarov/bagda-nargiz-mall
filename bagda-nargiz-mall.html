@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bağda — Nərgiz Mall, Bakı</title>
+<meta name="description" content="Bağda — 1968-ci ildən bağ evi ruhunda restoran. Nərgiz Mall, 4-cü mərtəbə, Bakı. Azərbaycan mətbəxi, ekoloji təmiz məhsullar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1714;
+    --ink-soft:#322c25;
+    --muted:#6f675b;
+    --paper:#f0ece1;
+    --paper-deep:#e7e0d0;
+    --paper-card:#f5f1e8;
+    --rule:#1a1714;
+    --accent:#7d1d1d;
+    --accent-deep:#5e1414;
+    --shadow:rgba(26,23,20,.16);
+    --serif:"Playfair Display",Georgia,serif;
+    --fat:"Abril Fatface",Georgia,serif;
+    --sans:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background-color:var(--paper);
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+  /* ---------- TOP UTILITY BAR ---------- */
+  .topbar{
+    background:var(--ink);color:var(--paper);
+    font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;
+  }
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:38px;gap:18px}
+  .topbar .tb-left{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+  .topbar .star{color:#e8c66b;letter-spacing:0}
+  .topbar a{border-bottom:1px solid transparent;transition:border-color .2s}
+  .topbar a:hover{border-color:var(--paper)}
+  .tb-hours .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#7ec27e;margin-right:6px;vertical-align:middle}
+
+  /* ---------- HEADER ---------- */
+  header.site{
+    position:sticky;top:0;z-index:60;
+    background:rgba(240,236,225,.93);
+    backdrop-filter:saturate(140%) blur(8px);
+    border-bottom:1px solid var(--rule);
+    box-shadow:0 2px 0 var(--ink);
+  }
+  header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:14px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:var(--fat);font-size:30px;line-height:1;letter-spacing:.01em}
+  .brand .rosette{width:30px;height:30px;flex:none}
+  .nav-actions{display:flex;align-items:center;gap:10px}
+  .langs{display:flex;border:1.5px solid var(--ink);border-radius:2px;overflow:hidden}
+  .langs button{
+    font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:.08em;
+    background:transparent;color:var(--ink);border:0;padding:7px 11px;cursor:pointer;
+    border-right:1px solid var(--ink);transition:background .15s,color .15s;
+  }
+  .langs button:last-child{border-right:0}
+  .langs button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+  .btn{
+    font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.04em;
+    border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);
+    padding:9px 16px;border-radius:2px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;
+    transition:transform .12s ease, background .15s;white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-1px)}
+  .btn.accent{background:var(--accent);border-color:var(--accent)}
+  .btn.accent:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:var(--paper)}
+  .btn svg{width:15px;height:15px;flex:none}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;padding:62px 0 30px;text-align:center;overflow:hidden}
+  .hero .kicker{font-size:12.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+  .hero .orn-line{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:14px}
+  .hero .orn-line .hr{height:1.5px;background:var(--ink);width:min(160px,22vw)}
+  .hero h1{font-family:var(--fat);font-size:clamp(64px,15vw,168px);line-height:.95;letter-spacing:.005em;margin:6px 0 18px;padding-bottom:.06em}
+  .hero .sub-word{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(20px,4.4vw,34px);color:var(--ink-soft);margin-top:0}
+  .hero .lede{max-width:620px;margin:24px auto 0;font-size:16px;color:var(--ink-soft)}
+  .hero .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+  .hero .meta-row{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin-top:30px;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+  .hero .meta-row b{color:var(--ink)}
+  .hero .meta-row .star{color:var(--accent)}
+  .hero-engrave{position:absolute;opacity:.10;pointer-events:none}
+  .hero-engrave.left{left:-30px;top:90px;width:230px;transform:rotate(-8deg)}
+  .hero-engrave.right{right:-20px;bottom:0;width:210px;transform:rotate(6deg)}
+
+  /* ---------- SECTION FRAMES ---------- */
+  .double-rule{border-top:3px double var(--ink);margin:0}
+  .eyebrow{display:flex;align-items:center;gap:14px;font-size:12.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+  .eyebrow .rosette{width:18px;height:18px;flex:none}
+
+  /* ---------- STORY ---------- */
+  .story{padding:54px 0}
+  .story .grid{display:grid;grid-template-columns:1.55fr 1fr;gap:46px;align-items:start}
+  .story h2{font-family:var(--serif);font-weight:900;font-size:clamp(30px,4.6vw,46px);line-height:1.04;margin:14px 0 18px}
+  .story p{margin-bottom:14px;font-size:15.5px;color:var(--ink-soft)}
+  .story .body-col p:first-of-type::first-letter{
+    font-family:var(--fat);font-size:64px;line-height:.7;float:left;padding:8px 12px 4px 0;color:var(--accent);
+  }
+  .story .aside{border:1.5px solid var(--ink);background:var(--paper-card);padding:0}
+  .frame{position:relative}
+  .frame figcaption{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:10px 14px;border-top:1px solid var(--ink)}
+  .engrave-box{background:var(--paper-deep);padding:26px;display:flex;align-items:center;justify-content:center}
+  .engrave-box svg{width:100%;height:auto;max-height:240px}
+  .story .pull{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.4;border-left:3px solid var(--accent);padding:6px 0 6px 18px;margin:22px 0;color:var(--ink)}
+
+  /* ---------- MENU NAV ---------- */
+  .menu-nav{position:sticky;top:64px;z-index:50;background:var(--ink);}
+  .menu-nav .wrap{display:flex;gap:6px;overflow-x:auto;padding:0 16px;scrollbar-width:none}
+  .menu-nav .wrap::-webkit-scrollbar{display:none}
+  .menu-nav a{
+    font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#cfc7b8;
+    padding:14px 14px;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;
+  }
+  .menu-nav a:hover,.menu-nav a.active{color:var(--paper);border-color:var(--accent)}
+
+  /* ---------- MENU SECTIONS ---------- */
+  .menu-sec{padding:58px 0 14px;position:relative}
+  .menu-sec .pagenum{
+    position:absolute;font-family:var(--fat);font-size:clamp(150px,30vw,360px);color:var(--ink);
+    opacity:.045;top:8px;right:2%;line-height:.8;pointer-events:none;user-select:none;z-index:0;
+  }
+  .sec-head{position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:6px}
+  .sec-head h2{font-family:var(--fat);font-size:clamp(34px,6vw,62px);line-height:.95;letter-spacing:.005em}
+  .sec-head .sec-ru{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:16px;letter-spacing:.04em}
+  .menu-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr 1fr;gap:18px 56px;margin-top:26px;align-items:start}
+  .menu-col{display:flex;flex-direction:column}
+  .group + .group{margin-top:30px}
+  .group-title{font-family:var(--serif);font-weight:800;font-size:24px;letter-spacing:.01em;padding-bottom:8px;margin-bottom:8px;border-bottom:1.5px solid var(--ink);display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+  .group-title .gt-ru{font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .dish{display:flex;align-items:baseline;gap:8px;padding:8px 0;border-bottom:1px dotted rgba(26,23,20,.28)}
+  .dish:last-child{border-bottom:0}
+  .dish .d-main{flex:1;min-width:0}
+  .dish .d-name{font-family:var(--serif);font-weight:600;font-size:16.5px;line-height:1.25;color:var(--ink)}
+  .dish .d-desc{font-size:12.5px;color:var(--muted);margin-top:2px;line-height:1.4}
+  .dish .leader{flex:1;border-bottom:1px dotted var(--ink);transform:translateY(-4px);min-width:14px;opacity:.5}
+  .dish .d-price{font-family:var(--sans);font-weight:700;font-size:15.5px;white-space:nowrap;letter-spacing:.02em}
+  .dish .d-price .cur{font-size:11px;color:var(--muted);font-weight:600;margin-left:2px}
+
+  /* archive / article card inside menu */
+  .archive{border:1.5px solid var(--ink);background:var(--paper-card);padding:20px 20px 22px;margin-top:8px}
+  .archive .a-tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:3px 9px;margin-bottom:12px}
+  .archive h4{font-family:var(--serif);font-weight:800;font-size:20px;line-height:1.15;margin-bottom:10px}
+  .archive p{font-size:13.5px;color:var(--ink-soft);margin-bottom:8px}
+  .archive .a-engrave{margin:6px 0 14px;display:flex;justify-content:center}
+  .archive .a-engrave svg{width:64%;height:auto;opacity:.92}
+  .archive.tip{background:var(--paper-deep)}
+  .archive.tip h4{color:var(--accent)}
+
+  .col-stack{display:flex;flex-direction:column;gap:24px}
+
+  /* ---------- VISIT / CONTACT ---------- */
+  .visit{padding:62px 0 20px}
+  .visit .grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start;margin-top:30px}
+  .visit h2{font-family:var(--fat);font-size:clamp(38px,7vw,70px);line-height:.95;margin-bottom:8px}
+  .visit .vsub{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:18px;margin-bottom:26px}
+  .info-row{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid rgba(26,23,20,.25)}
+  .info-row svg{width:20px;height:20px;flex:none;margin-top:3px}
+  .info-row .ir-label{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+  .info-row .ir-val{font-size:16px;font-weight:600}
+  .info-row a.ir-val{border-bottom:1px solid var(--ink)}
+  .visit .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+  .map-card{border:1.5px solid var(--ink);background:var(--paper-card);overflow:hidden;height:100%;min-height:380px;display:flex;flex-direction:column;color:var(--ink);transition:transform .15s ease,box-shadow .2s ease}
+  .map-card:hover{transform:translateY(-2px);box-shadow:6px 6px 0 var(--ink)}
+  .map-visual{position:relative;flex:1;background:var(--paper-deep);overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .map-visual .map-lines{position:absolute;inset:0;width:100%;height:100%}
+  .map-pin{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 24px}
+  .map-pin svg{width:52px;height:auto;filter:drop-shadow(2px 3px 0 rgba(26,23,20,.25));animation:pinDrop .5s ease both}
+  .map-pin-label{margin-top:14px;font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.4;color:var(--ink-soft);max-width:240px}
+  .map-card .mc-foot{padding:14px 16px;border-top:1px solid var(--ink);display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:13px}
+  .map-card .mc-link{font-weight:700;border-bottom:1px solid var(--ink)}
+  @keyframes pinDrop{from{transform:translateY(-14px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+  /* ---------- RESERVE STRIP ---------- */
+  .reserve{background:var(--ink);color:var(--paper);text-align:center;padding:48px 0}
+  .reserve h3{font-family:var(--fat);font-size:clamp(30px,5.4vw,52px);line-height:1;margin-bottom:10px}
+  .reserve p{color:#cfc7b8;max-width:520px;margin:0 auto 24px;font-size:15px}
+  .reserve .btn.accent{font-size:15px;padding:13px 26px}
+  .reserve .btn.ghost{color:var(--paper);border-color:var(--paper)}
+  .reserve .btn.ghost:hover{background:var(--paper);color:var(--ink)}
+  .reserve .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:46px 0 34px;border-top:3px double var(--ink)}
+  footer .grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+  footer .brand{font-size:38px}
+  footer .f-tag{font-family:var(--serif);font-style:italic;color:var(--muted);margin-top:6px;font-size:15px;max-width:300px}
+  footer .f-col h5{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  footer .f-col a,footer .f-col div{display:block;font-size:14px;margin-bottom:8px;color:var(--ink-soft)}
+  footer .f-col a:hover{color:var(--ink)}
+  footer .legal{margin-top:30px;padding-top:18px;border-top:1px solid rgba(26,23,20,.25);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  /* mobile sticky call */
+  .mobile-call{display:none}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .story .grid{grid-template-columns:1fr;gap:30px}
+    .visit .grid{grid-template-columns:1fr;gap:32px}
+    .menu-grid{grid-template-columns:1fr;gap:30px}
+    .hero-engrave{display:none}
+    .topbar .tb-left{gap:14px}
+  }
+  @media(max-width:620px){
+    .wrap{padding:0 16px}
+    .topbar{display:none}
+    header.site .wrap{height:58px}
+    .brand{font-size:24px}
+    .nav-actions .btn-call-top{display:none}
+    .langs button{padding:7px 9px;font-size:11px}
+    .hero{padding:40px 0 18px}
+    .menu-nav{top:58px}
+    .group-title .gt-ru{display:none}
+    .sec-head .sec-ru{display:none}
+    .reserve{padding:38px 0 96px}
+    footer{padding-bottom:96px}
+    .mobile-call{
+      display:flex;position:fixed;bottom:0;left:0;right:0;z-index:80;gap:0;
+      border-top:1.5px solid var(--ink);box-shadow:0 -4px 16px var(--shadow);
+    }
+    .mobile-call a{flex:1;text-align:center;padding:15px 8px;font-weight:700;font-size:13px;letter-spacing:.04em;display:flex;align-items:center;justify-content:center;gap:7px}
+    .mobile-call a.m-dir{background:var(--paper);color:var(--ink)}
+    .mobile-call a.m-call{background:var(--accent);color:var(--paper)}
+    .mobile-call svg{width:16px;height:16px}
+  }
+  @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+  :focus-visible{outline:2.5px solid var(--accent);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<!-- ===== SVG defs: rosette + engravings ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="rosette" viewBox="0 0 100 100">
+      <g fill="none" stroke="currentColor" stroke-width="2.4">
+        <circle cx="50" cy="50" r="9"/>
+        <g>
+          <ellipse cx="50" cy="22" rx="7" ry="13"/>
+          <ellipse cx="50" cy="78" rx="7" ry="13"/>
+          <ellipse cx="22" cy="50" rx="13" ry="7"/>
+          <ellipse cx="78" cy="50" rx="13" ry="7"/>
+        </g>
+        <g transform="rotate(45 50 50)">
+          <ellipse cx="50" cy="24" rx="6" ry="11"/>
+          <ellipse cx="50" cy="76" rx="6" ry="11"/>
+          <ellipse cx="24" cy="50" rx="11" ry="6"/>
+          <ellipse cx="76" cy="50" rx="11" ry="6"/>
+        </g>
+        <circle cx="50" cy="50" r="3.4" fill="currentColor"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ===== TOP BAR ===== -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="tb-left">
+      <span><span class="star">★</span> 4.9 <span data-i18n="tb_reviews">· 107 rəy</span></span>
+      <span class="tb-hours"><span class="dot"></span><span data-i18n="tb_open">Açıqdır · 00:00-da bağlanır</span></span>
+      <span data-i18n="tb_price">20–30 ₼ / nəfər</span>
+    </div>
+    <div class="tb-left">
+      <a href="tel:+994708880404">+994 70 888 04 04</a>
+      <a href="https://instagram.com/bagda.az" target="_blank" rel="noopener">@bagda.az</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="site">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="Bağda">
+      <svg class="rosette" aria-hidden="true"><use href="#rosette"/></svg>
+      Bağda
+    </a>
+    <div class="nav-actions">
+      <div class="langs" role="group" aria-label="Language">
+        <button data-lang="az" aria-pressed="true">AZ</button>
+        <button data-lang="en" aria-pressed="false">EN</button>
+        <button data-lang="ru" aria-pressed="false">RU</button>
+      </div>
+      <a class="btn ghost btn-call-top" href="#menu" data-i18n="nav_menu">Menyu</a>
+      <a class="btn accent" href="tel:+994708880404">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1 .37 1.96.72 2.88a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.11-.45c.92.35 1.88.59 2.88.72A2 2 0 0 1 22 16.92z"/></svg>
+        <span data-i18n="nav_call">Zəng et</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <!-- sturgeon engraving left -->
+  <svg class="hero-engrave left" viewBox="0 0 240 120" aria-hidden="true">
+    <g fill="none" stroke="var(--ink)" stroke-width="2">
+      <path d="M10 60 Q60 30 130 48 Q190 60 230 58 Q210 70 230 88 Q185 70 130 80 Q60 96 10 60Z"/>
+      <path d="M40 56 Q70 40 110 50"/>
+      <path d="M120 50 Q140 38 150 30 M140 50 Q165 44 180 38 M160 64 Q185 70 205 74"/>
+      <circle cx="28" cy="58" r="2.4" fill="var(--ink)"/>
+    </g>
+  </svg>
+  <svg class="hero-engrave right" viewBox="0 0 120 200" aria-hidden="true">
+    <g fill="none" stroke="var(--ink)" stroke-width="2">
+      <path d="M60 16 Q44 30 50 46 Q40 40 36 56 Q60 62 84 56 Q80 40 70 46 Q76 30 60 16Z"/>
+      <path d="M48 58 Q40 110 56 150 Q60 168 60 184 M72 58 Q80 110 64 150"/>
+      <ellipse cx="60" cy="186" rx="22" ry="6"/>
+    </g>
+  </svg>
+
+  <div class="wrap">
+    <div class="kicker" data-i18n="hero_kicker">Bağ evi · 1968-ci ildən · Bakı</div>
+    <div class="orn-line">
+      <span class="hr"></span>
+      <svg style="width:26px;height:26px;color:var(--accent)" aria-hidden="true"><use href="#rosette"/></svg>
+      <span class="hr"></span>
+    </div>
+    <h1>Bağda</h1>
+    <div class="sub-word" data-i18n="hero_sub">Kəndin dadı, şəhərin qəlbində</div>
+    <p class="lede" data-i18n="hero_lede">Ekoloji təmiz məhsullardan hazırlanan Azərbaycan mətbəxi — torpağın, günəşin və zəhmətin dadı. Nərgiz Mall, 4-cü mərtəbə.</p>
+    <div class="cta-row">
+      <a class="btn accent" href="#menu" data-i18n="hero_cta_menu">Menyuya bax</a>
+      <a class="btn ghost" href="https://maps.google.com/?q=Bagda+Nargiz+Mall+Baku" target="_blank" rel="noopener" data-i18n="hero_cta_dir">Marşrut qur</a>
+      <a class="btn ghost" href="tel:+994708880404" data-i18n="hero_cta_call">Rezerv et</a>
+    </div>
+    <div class="meta-row">
+      <span><span class="star">★</span> <b>4.9</b> <span data-i18n="hero_m_reviews">107 rəy</span></span>
+      <span><b data-i18n="hero_m_cuisine">Azərbaycan mətbəxi</b></span>
+      <span><b>20–30 ₼</b> <span data-i18n="hero_m_person">/ nəfər</span></span>
+      <span><b data-i18n="hero_m_open">Hər gün 00:00-dək</b></span>
+    </div>
+  </div>
+</section>
+
+<div class="double-rule wrap-rule"><div class="wrap"></div></div>
+
+<!-- ===== STORY ===== -->
+<section class="story">
+  <div class="wrap">
+    <div class="grid">
+      <div class="body-col">
+        <div class="eyebrow"><svg class="rosette"><use href="#rosette"/></svg><span data-i18n="story_eyebrow">Tarix · 1968</span></div>
+        <h2 data-i18n="story_title">Bir bağ evindən doğulan süfrə</h2>
+        <p data-i18n="story_p1">1968-ci ildə şəhərin kənarında kiçik bir bağ evi tikildi. Taxta qapıları, ağ kərpic divarları və damının üstündəki durna heykəli ilə o ev sakitlik və sadəlik simvolu idi. O vaxtlar burada ailə ilə birlikdə istirahət edilir, samovar qaynadılır, qonşularla çay içilirdi.</p>
+        <p data-i18n="story_p2">İllər keçdi, zaman dəyişdi. Bir gün evin sahibi düşündü: niyə bu yer yalnız xatirə kimi qalsın? Beləcə bağ evi təbii kənd məhsulları mağazasına çevrildi — rəflərdə bal, pendir, ev qatığı, mürəbbələr və turşular düzülmüşdü, hər biri ətri ilə uşaqlığı xatırladırdı.</p>
+        <div class="pull" data-i18n="story_pull">«Kaş burada oturub bu nemətləri yerindəcə dadmaq olaydı» — müştərilər belə deyirdi.</div>
+        <p data-i18n="story_p3">Beləcə həyətə masa və stullar əlavə edildi, insanlar buraya yalnız alış-veriş üçün deyil, dincəlmək üçün gəlməyə başladılar. Bu gün həmin yer artıq sadəcə bir mağaza deyil — kəndin ab-havasını və keçmişin istiliyini daşıyan bir restorandır.</p>
+      </div>
+      <figure class="aside frame">
+        <div class="engrave-box">
+          <!-- samovar engraving -->
+          <svg viewBox="0 0 200 240" aria-hidden="true">
+            <g fill="none" stroke="var(--ink)" stroke-width="2.4" stroke-linejoin="round">
+              <ellipse cx="100" cy="225" rx="46" ry="9"/>
+              <path d="M70 215 h60 l-6 -14 h-48 z"/>
+              <path d="M74 201 q26 14 52 0"/>
+              <path d="M60 120 q40 -26 80 0 q14 44 -6 80 q-34 18 -68 0 q-20 -36 -6 -80Z"/>
+              <path d="M58 122 q-22 4 -22 22 q0 14 18 18" />
+              <path d="M142 122 q22 4 22 22 q0 14 -18 18"/>
+              <path d="M86 120 q14 -10 28 0"/>
+              <rect x="84" y="92" width="32" height="30" rx="3"/>
+              <path d="M92 92 v-16 h16 v16"/>
+              <ellipse cx="100" cy="74" rx="16" ry="6"/>
+              <path d="M90 70 q10 -22 20 0"/>
+              <circle cx="100" cy="46" r="6"/>
+              <path d="M126 150 q22 0 22 16 q0 12 -16 14" />
+            </g>
+          </svg>
+        </div>
+        <figcaption data-i18n="story_cap">Samovar üstündə dəmlənən çay — bağ evinin ruhu</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MENU NAV ===== -->
+<nav class="menu-nav" id="menu" aria-label="Menu sections">
+  <div class="wrap" id="menuNav"></div>
+</nav>
+
+<!-- ===== MENU SECTIONS (injected) ===== -->
+<main id="menuRoot"></main>
+
+<!-- ===== RESERVE STRIP ===== -->
+<section class="reserve">
+  <div class="wrap">
+    <svg style="width:32px;height:32px;margin:0 auto 14px;color:var(--accent)" aria-hidden="true"><use href="#rosette"/></svg>
+    <h3 data-i18n="res_title">Süfrəmizdə yeriniz hazırdır</h3>
+    <p data-i18n="res_text">Masa rezerv etmək, böyük sifariş və ya Xəşil/qaymaq dəsti (4 nəfərlik, öncədən) üçün bizə zəng edin.</p>
+    <div class="cta-row">
+      <a class="btn accent" href="tel:+994708880404">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1 .37 1.96.72 2.88a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.11-.45c.92.35 1.88.59 2.88.72A2 2 0 0 1 22 16.92z"/></svg>
+        +994 70 888 04 04
+      </a>
+      <a class="btn ghost" href="https://instagram.com/bagda.az" target="_blank" rel="noopener" data-i18n="res_ig">@bagda.az</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VISIT ===== -->
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="eyebrow"><svg class="rosette"><use href="#rosette"/></svg><span data-i18n="visit_eyebrow">Bizi tapın</span></div>
+    <div class="grid">
+      <div>
+        <h2 data-i18n="visit_title">Ziyarət</h2>
+        <div class="vsub" data-i18n="visit_sub">Nərgiz Mall, Fəvvarələr meydanı, Bakı</div>
+
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><div class="ir-label" data-i18n="visit_addr_l">Ünvan</div><div class="ir-val" data-i18n="visit_addr_v">Nərgiz Mall, 4-cü mərtəbə · Fəvvarələr meydanı, Bakı 1005</div></div>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><div class="ir-label" data-i18n="visit_hours_l">İş saatları</div><div class="ir-val" data-i18n="visit_hours_v">Hər gün · 10:00 – 00:00</div></div>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1 .37 1.96.72 2.88a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.11-.45c.92.35 1.88.59 2.88.72A2 2 0 0 1 22 16.92z"/></svg>
+          <div><div class="ir-label" data-i18n="visit_phone_l">Telefon</div><a class="ir-val" href="tel:+994708880404">+994 70 888 04 04</a></div>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.3" fill="var(--ink)" stroke="none"/></svg>
+          <div><div class="ir-label" data-i18n="visit_ig_l">Instagram</div><a class="ir-val" href="https://instagram.com/bagda.az" target="_blank" rel="noopener">@bagda.az</a></div>
+        </div>
+        <div class="cta-row">
+          <a class="btn accent" href="https://maps.google.com/?q=Bagda+Nargiz+Mall+Baku" target="_blank" rel="noopener" data-i18n="visit_cta_dir">Marşrut qur</a>
+          <a class="btn ghost" href="tel:+994708880404" data-i18n="visit_cta_call">Zəng et</a>
+        </div>
+      </div>
+      <a class="map-card" href="https://maps.google.com/?q=Bagda+Nargiz+Mall+Baku" target="_blank" rel="noopener" aria-label="Open in maps">
+        <div class="map-visual">
+          <!-- decorative engraved map: streets + location pin -->
+          <svg class="map-lines" viewBox="0 0 400 340" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+            <g stroke="var(--ink)" fill="none" stroke-width="1" opacity=".22">
+              <path d="M-20 70 H420 M-20 150 H420 M-20 230 H420 M-20 300 H420"/>
+              <path d="M70 -20 V360 M160 -20 V360 M250 -20 V360 M330 -20 V360"/>
+              <path d="M-20 20 L420 320" stroke-width="2" opacity=".5"/>
+              <path d="M-20 200 L200 -20" stroke-width="1.5" opacity=".4"/>
+            </g>
+            <g stroke="var(--ink)" fill="none" stroke-width="1" opacity=".5">
+              <rect x="92" y="92" width="46" height="34"/>
+              <rect x="190" y="170" width="54" height="40"/>
+              <rect x="276" y="100" width="40" height="30"/>
+            </g>
+          </svg>
+          <div class="map-pin">
+            <svg viewBox="0 0 48 64" aria-hidden="true">
+              <path d="M24 2 C12 2 3 11 3 23 C3 39 24 62 24 62 C24 62 45 39 45 23 C45 11 36 2 24 2 Z" fill="var(--accent)" stroke="var(--ink)" stroke-width="2"/>
+              <circle cx="24" cy="23" r="8" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"/>
+            </svg>
+            <span class="map-pin-label" data-i18n="visit_addr_v">Nərgiz Mall, 4-cü mərtəbə · Fəvvarələr meydanı, Bakı 1005</span>
+          </div>
+        </div>
+        <div class="mc-foot">
+          <span data-i18n="visit_map_foot">Nərgiz Mall, 4-cü mərtəbə</span>
+          <span class="mc-link" data-i18n="visit_map_open">Xəritədə aç →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <div class="brand" style="font-family:var(--fat)">
+          <svg class="rosette" style="width:34px;height:34px" aria-hidden="true"><use href="#rosette"/></svg>
+          Bağda
+        </div>
+        <div class="f-tag" data-i18n="foot_tag">Kəndin dadı, şəhərin qəlbində. 1968-ci ildən.</div>
+      </div>
+      <div class="f-col">
+        <h5 data-i18n="foot_menu_h">Menyu</h5>
+        <a href="#sec-0" data-i18n="cat_0">Səhər yeməyi</a>
+        <a href="#sec-1" data-i18n="cat_1">Salatlar & Şorbalar</a>
+        <a href="#sec-2" data-i18n="cat_2">İsti yeməklər & Balıq</a>
+        <a href="#sec-3" data-i18n="cat_3">Kabab & Plov</a>
+        <a href="#sec-4" data-i18n="cat_4">İçkilər & Desertlər</a>
+      </div>
+      <div class="f-col">
+        <h5 data-i18n="foot_visit_h">Ziyarət</h5>
+        <div data-i18n="foot_addr">Nərgiz Mall, 4-cü mərtəbə, Bakı</div>
+        <div data-i18n="foot_hours">Hər gün 10:00 – 00:00</div>
+        <a href="tel:+994708880404">+994 70 888 04 04</a>
+        <a href="https://instagram.com/bagda.az" target="_blank" rel="noopener">@bagda.az</a>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="yr"></span> Bağda · Nərgiz Mall, Bakı</span>
+      <span data-i18n="foot_service">Servis haqqı 9% · Qiymətlər ₼ (AZN)</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== MOBILE STICKY CALL ===== -->
+<div class="mobile-call">
+  <a class="m-dir" href="https://maps.google.com/?q=Bagda+Nargiz+Mall+Baku" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    <span data-i18n="m_dir">Marşrut</span>
+  </a>
+  <a class="m-call" href="tel:+994708880404">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1 .37 1.96.72 2.88a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.11-.45c.92.35 1.88.59 2.88.72A2 2 0 0 1 22 16.92z"/></svg>
+    <span data-i18n="m_call">Zəng et</span>
+  </a>
+</div>
+
+<script>
+/* ============================================================
+   UI STRINGS (az / en / ru)
+   ============================================================ */
+const UI = {
+  az:{
+    tb_reviews:"· 107 rəy", tb_open:"Açıqdır · 00:00-da bağlanır", tb_price:"20–30 ₼ / nəfər",
+    nav_menu:"Menyu", nav_call:"Zəng et",
+    hero_kicker:"Bağ evi · 1968-ci ildən · Bakı", hero_sub:"Kəndin dadı, şəhərin qəlbində",
+    hero_lede:"Ekoloji təmiz məhsullardan hazırlanan Azərbaycan mətbəxi — torpağın, günəşin və zəhmətin dadı. Nərgiz Mall, 4-cü mərtəbə.",
+    hero_cta_menu:"Menyuya bax", hero_cta_dir:"Marşrut qur", hero_cta_call:"Rezerv et",
+    hero_m_reviews:"107 rəy", hero_m_cuisine:"Azərbaycan mətbəxi", hero_m_person:"/ nəfər", hero_m_open:"Hər gün 00:00-dək",
+    story_eyebrow:"Tarix · 1968", story_title:"Bir bağ evindən doğulan süfrə",
+    story_p1:"1968-ci ildə şəhərin kənarında kiçik bir bağ evi tikildi. Taxta qapıları, ağ kərpic divarları və damının üstündəki durna heykəli ilə o ev sakitlik və sadəlik simvolu idi. O vaxtlar burada ailə ilə birlikdə istirahət edilir, samovar qaynadılır, qonşularla çay içilirdi.",
+    story_p2:"İllər keçdi, zaman dəyişdi. Bir gün evin sahibi düşündü: niyə bu yer yalnız xatirə kimi qalsın? Beləcə bağ evi təbii kənd məhsulları mağazasına çevrildi — rəflərdə bal, pendir, ev qatığı, mürəbbələr və turşular düzülmüşdü, hər biri ətri ilə uşaqlığı xatırladırdı.",
+    story_pull:"«Kaş burada oturub bu nemətləri yerindəcə dadmaq olaydı» — müştərilər belə deyirdi.",
+    story_p3:"Beləcə həyətə masa və stullar əlavə edildi, insanlar buraya yalnız alış-veriş üçün deyil, dincəlmək üçün gəlməyə başladılar. Bu gün həmin yer artıq sadəcə bir mağaza deyil — kəndin ab-havasını və keçmişin istiliyini daşıyan bir restorandır.",
+    story_cap:"Samovar üstündə dəmlənən çay — bağ evinin ruhu",
+    res_title:"Süfrəmizdə yeriniz hazırdır",
+    res_text:"Masa rezerv etmək, böyük sifariş və ya Xəşil/qaymaq dəsti (4 nəfərlik, öncədən) üçün bizə zəng edin.",
+    res_ig:"@bagda.az",
+    visit_eyebrow:"Bizi tapın", visit_title:"Ziyarət", visit_sub:"Nərgiz Mall, Fəvvarələr meydanı, Bakı",
+    visit_addr_l:"Ünvan", visit_addr_v:"Nərgiz Mall, 4-cü mərtəbə · Fəvvarələr meydanı, Bakı 1005",
+    visit_hours_l:"İş saatları", visit_hours_v:"Hər gün · 10:00 – 00:00",
+    visit_phone_l:"Telefon", visit_ig_l:"Instagram",
+    visit_cta_dir:"Marşrut qur", visit_cta_call:"Zəng et",
+    visit_map_foot:"Nərgiz Mall, 4-cü mərtəbə", visit_map_open:"Xəritədə aç →",
+    foot_tag:"Kəndin dadı, şəhərin qəlbində. 1968-ci ildən.",
+    foot_menu_h:"Menyu", foot_visit_h:"Ziyarət",
+    foot_addr:"Nərgiz Mall, 4-cü mərtəbə, Bakı", foot_hours:"Hər gün 10:00 – 00:00",
+    foot_service:"Servis haqqı 9% · Qiymətlər ₼ (AZN)",
+    m_dir:"Marşrut", m_call:"Zəng et",
+    cat_0:"Səhər yeməyi", cat_1:"Salatlar & Şorbalar", cat_2:"İsti yeməklər & Balıq", cat_3:"Kabab & Plov", cat_4:"İçkilər & Desertlər"
+  },
+  en:{
+    tb_reviews:"· 107 reviews", tb_open:"Open · Closes 00:00", tb_price:"20–30 ₼ / person",
+    nav_menu:"Menu", nav_call:"Call",
+    hero_kicker:"A garden house · Since 1968 · Baku", hero_sub:"The taste of the village, in the heart of the city",
+    hero_lede:"Azerbaijani cuisine made from clean, natural produce — the flavour of the soil, the sun and honest work. Nargiz Mall, 4th floor.",
+    hero_cta_menu:"View menu", hero_cta_dir:"Get directions", hero_cta_call:"Reserve a table",
+    hero_m_reviews:"107 reviews", hero_m_cuisine:"Azerbaijani cuisine", hero_m_person:"/ person", hero_m_open:"Daily until 00:00",
+    story_eyebrow:"History · 1968", story_title:"A table born from a garden house",
+    story_p1:"In 1968 a small garden house was built at the edge of the city. With its wooden doors, white-brick walls and a crane statue on the roof, it stood for calm and simplicity. Back then families came here to rest, the samovar was kept boiling, and tea was shared with neighbours.",
+    story_p2:"Years passed and times changed. One day the owner wondered: why should this place remain only a memory? So the garden house became a shop of natural village produce — shelves of honey, cheese, homemade yoghurt, jams and pickles, each scent calling back childhood.",
+    story_pull:"“If only we could sit right here and taste these treats on the spot,” the guests would say.",
+    story_p3:"And so tables and chairs were added to the yard, and people began to come not only to shop but to linger. Today this place is no longer just a shop — it is a restaurant that carries the air of the village and the warmth of the past.",
+    story_cap:"Tea brewed over the samovar — the soul of the garden house",
+    res_title:"A place at our table is ready for you",
+    res_text:"Call us to reserve a table, place a large order, or pre-order the Xəşil/qaymaq set (serves 4, by advance order).",
+    res_ig:"@bagda.az",
+    visit_eyebrow:"Find us", visit_title:"Visit", visit_sub:"Nargiz Mall, Fountains Square, Baku",
+    visit_addr_l:"Address", visit_addr_v:"Nargiz Mall, 4th floor · Fountains Square, Baku 1005",
+    visit_hours_l:"Hours", visit_hours_v:"Daily · 10:00 – 00:00",
+    visit_phone_l:"Phone", visit_ig_l:"Instagram",
+    visit_cta_dir:"Get directions", visit_cta_call:"Call",
+    visit_map_foot:"Nargiz Mall, 4th floor", visit_map_open:"Open in maps →",
+    foot_tag:"The taste of the village, in the heart of the city. Since 1968.",
+    foot_menu_h:"Menu", foot_visit_h:"Visit",
+    foot_addr:"Nargiz Mall, 4th floor, Baku", foot_hours:"Daily 10:00 – 00:00",
+    foot_service:"9% service charge · Prices in ₼ (AZN)",
+    m_dir:"Directions", m_call:"Call",
+    cat_0:"Breakfast", cat_1:"Salads & Soups", cat_2:"Hot dishes & Fish", cat_3:"Kebabs & Pilaf", cat_4:"Drinks & Desserts"
+  },
+  ru:{
+    tb_reviews:"· 107 отзывов", tb_open:"Открыто · Закрытие в 00:00", tb_price:"20–30 ₼ / чел.",
+    nav_menu:"Меню", nav_call:"Позвонить",
+    hero_kicker:"Дачный дом · С 1968 года · Баку", hero_sub:"Вкус села в сердце города",
+    hero_lede:"Азербайджанская кухня из экологически чистых продуктов — вкус земли, солнца и труда. Nargiz Mall, 4-й этаж.",
+    hero_cta_menu:"Смотреть меню", hero_cta_dir:"Проложить маршрут", hero_cta_call:"Забронировать стол",
+    hero_m_reviews:"107 отзывов", hero_m_cuisine:"Азербайджанская кухня", hero_m_person:"/ чел.", hero_m_open:"Ежедневно до 00:00",
+    story_eyebrow:"История · 1968", story_title:"Стол, рождённый из дачного дома",
+    story_p1:"В 1968 году на окраине города построили маленький дачный дом. С деревянными дверями, белыми кирпичными стенами и фигурой журавля на крыше он был символом покоя и простоты. Тогда здесь отдыхали всей семьёй, кипел самовар, пили чай с соседями.",
+    story_p2:"Шли годы, времена менялись. Однажды хозяин подумал: почему это место должно остаться лишь воспоминанием? Так дачный дом превратился в лавку натуральных деревенских продуктов — на полках стояли мёд, сыр, домашний катык, варенья и соленья, и каждый аромат возвращал в детство.",
+    story_pull:"«Вот бы сесть прямо здесь и попробовать всё это на месте», — говорили гости.",
+    story_p3:"Так во дворе появились столы и стулья, и люди стали приходить не только за покупками, но и чтобы отдохнуть. Сегодня это уже не просто лавка — это ресторан, хранящий дух села и тепло прошлого.",
+    story_cap:"Чай, заваренный на самоваре, — душа дачного дома",
+    res_title:"Ваше место за нашим столом готово",
+    res_text:"Позвоните, чтобы забронировать стол, сделать большой заказ или заранее заказать сет Хашил/каймак (на 4 персоны, по предзаказу).",
+    res_ig:"@bagda.az",
+    visit_eyebrow:"Как нас найти", visit_title:"Визит", visit_sub:"Nargiz Mall, Площадь фонтанов, Баку",
+    visit_addr_l:"Адрес", visit_addr_v:"Nargiz Mall, 4-й этаж · Площадь фонтанов, Баку 1005",
+    visit_hours_l:"Часы работы", visit_hours_v:"Ежедневно · 10:00 – 00:00",
+    visit_phone_l:"Телефон", visit_ig_l:"Instagram",
+    visit_cta_dir:"Проложить маршрут", visit_cta_call:"Позвонить",
+    visit_map_foot:"Nargiz Mall, 4-й этаж", visit_map_open:"Открыть на карте →",
+    foot_tag:"Вкус села в сердце города. С 1968 года.",
+    foot_menu_h:"Меню", foot_visit_h:"Визит",
+    foot_addr:"Nargiz Mall, 4-й этаж, Баку", foot_hours:"Ежедневно 10:00 – 00:00",
+    foot_service:"Сервисный сбор 9% · Цены в ₼ (AZN)",
+    m_dir:"Маршрут", m_call:"Позвонить",
+    cat_0:"Завтрак", cat_1:"Салаты и супы", cat_2:"Горячее и рыба", cat_3:"Кебабы и плов", cat_4:"Напитки и десерты"
+  }
+};
+
+/* ============================================================
+   MENU DATA  — name {az,en,ru}, optional desc {az,en,ru}, price
+   Grouped into 5 page-sections matching the printed menu.
+   ============================================================ */
+const D = (az,en,ru)=>({az,en,ru});
+const MENU = [
+ { id:"sec-0", page:"2", title:D("Səhər yeməyi","Breakfast","Завтрак"), ru:"Завтрак",
+   archive:{ tag:D("Süfrədən","From the table","Из истории"),
+     h:D("Müqəddəs bir səhər","An almost sacred morning","Почти священное утро"),
+     p:D("Sovet dövründə səhər yeməyi az qala müqəddəs ayin idi: təzə dəmlənən çayın qoxusu, isti çörək, kərə yağı və bir az ev mürəbbəsi — bütün ailəni bir süfrə arxasında birləşdirirdi.",
+         "In Soviet times breakfast was almost a sacred ritual: the aroma of freshly brewed tea, warm bread, butter and a little homemade jam gathered the whole family around one table.",
+         "В советское время завтрак был делом почти священным: аромат свежезаваренного чая, тёплый хлеб, сливочное масло и немного домашнего варенья собирали всю семью за одним столом."),
+     engrave:"tea" },
+   groups:[
+    { t:D("Süfrəyə","To the table","К столу"), ru:"К столу", items:[
+      {n:D("Nəhrə yağı","Churned butter","Деревенское масло"),p:"4,5"},
+      {n:D("Kərə yağı","Butter","Сливочное масло"),p:"4,3"},
+      {n:D("Qaymaq","Clotted cream","Сливки"),p:"5,5"},
+      {n:D("Bal","Honey","Мёд"),p:"5"},
+      {n:D("Şor","Salted curd cheese","Солёный крем-сыр"),p:"3,5"},
+      {n:D("Süzmə","Cream cheese","Крем-сыр"),p:"4"},
+      {n:D("Zeytun","Olives","Маслины"),p:"4,5"},
+      {n:D("Cem","Jam","Джем"),p:"4"},
+      {n:D("Şokolad","Chocolate spread","Шоколадная паста"),p:"5"},
+      {n:D("Qatılaşdırılmış süd","Condensed milk","Сгущённое молоко"),p:"3,5"},
+      {n:D("Mürəbbə","Preserve","Варенье"),p:"6"},
+      {n:D("Bəhməz","Mulberry jam","Джем из шелковицы"),p:"4"},
+      {n:D("Pendir assorti","Cheese platter","Сырная тарелка"),p:"4,3"},
+      {n:D("Sıyıq","Porridge","Каша"),p:"9"},
+      {n:D("Paştet","Pâté","Паштет"),p:"5,3"},
+      {n:D("Kolbasa assorti","Cold cuts platter","Колбасное ассорти"),p:"8"},
+      {n:D("Bişmiş","Pastry basket","Выпечка"),p:"7"},
+      {n:D("Xəşil / qaymaq","Xashil with clotted cream","Хашил / каймак"),d:D("4 nəfərlik, öncədən sifarişlə","serves 4, by advance order","на 4 персоны, по предзаказу"),p:"30"},
+    ]},
+    { t:D("Yumurta & isti","Eggs & hot","Яйца и горячее"), ru:"Яйца и горячее", items:[
+      {n:D("Blinçik","Crêpes","Блинчики"),d:D("sadə / kəsmik / ət / banan","plain / curd / meat / banana","простые / творог / мясо / банан"),p:"1/2/3/3"},
+      {n:D("Sirniki","Syrniki","Сырники"),p:"5,5"},
+      {n:D("Pancake","Pancakes","Панкейк"),p:"5"},
+      {n:D("Qızardılmış lavaş pendir ilə","Fried lavash with cheese","Жареный лаваш с сыром"),p:"6,3"},
+      {n:D("Maxara","Makhara","Махара"),p:"3,5"},
+      {n:D("Sosiska","Sausages","Сосиски"),d:D("qızardılmış / qaynadılmış","fried / boiled","жареные / варёные"),p:"2/3"},
+      {n:D("Soyutma yumurta","Boiled egg","Варёное яйцо"),p:"1,5"},
+      {n:D("Sosiskalı yumurta","Eggs with sausage","Яичница с сосисками"),p:"7"},
+      {n:D("Sucuklu yumurta","Eggs with sujuk","Яичница с пряной колбасой"),p:"11"},
+      {n:D("Kükü","Herb omelette","Омлет с зеленью"),p:"11"},
+      {n:D("Qayğanaq","Fried eggs","Яичница глазунья"),p:"4"},
+      {n:D("Omlet","Omelette","Омлет"),d:D("sadə / pendirli / mix","plain / cheese / mix","простой / с сыром / микс"),p:"4/5/6"},
+      {n:D("Pomidor-yumurta","Eggs with tomato","Яичница с помидором"),p:"6,5"},
+      {n:D("Şakşuka","Shakshuka","Шакшука"),p:"6,5"},
+      {n:D("Qayğanaq əncir mürəbbəsi ilə","Fried eggs with fig jam","Яичница с инжирным вареньем"),p:"7,5"},
+      {n:D("Tuşonka yumurta ilə","Eggs with stewed beef","Яичница с тушёнкой"),p:"11"},
+      {n:D("Pomidor-yumurta qiymə ilə","Eggs with tomato & mince","Яичница с помидором и фаршем"),p:"11"},
+      {n:D("Qayğanaq basdırma ilə","Fried eggs with cured beef","Яичница с маринованной говядиной"),p:"13"},
+      {n:D("Kolbasa-yumurta","Eggs with sausage","Яичница с колбасой"),p:"11"},
+      {n:D("Çörək səbəti","Bread basket","Хлебная корзина"),p:"5,5"},
+    ]}
+   ]
+ },
+ { id:"sec-1", page:"3", title:D("Salatlar, Qəlyanaltılar, Şorbalar","Salads, Starters, Soups","Салаты, закуски, супы"), ru:"Салаты · Закуски · Супы",
+   archive:{ tag:D("Krossroad","Crossroads","Перекрёсток"),
+     h:D("Şərqlə Qərbin qovşağında","Where East meets West","На перекрёстке Востока и Запада"),
+     p:D("Azərbaycan tarixən Avropa və Asiyanın qovşağında yerləşir, mətbəxi isə fars, türk, rus və Qafqaz dadlarının təsirini əks etdirir — Böyük İpək Yolunun bir qolu da Araz boyunca buradan keçirdi.",
+         "Azerbaijan sits historically at the crossroads of Europe and Asia, and its cuisine reflects Persian, Turkish, Russian and Caucasian influences — one branch of the Great Silk Road ran right along the Araz here.",
+         "Азербайджан исторически лежит на перекрёстке Европы и Азии, а его кухня вобрала персидские, турецкие, русские и кавказские вкусы — одна из ветвей Великого шёлкового пути проходила здесь вдоль Аракса."),
+     engrave:"pomegranate" },
+   groups:[
+    { t:D("Salatlar","Salads","Салаты"), ru:"Салаты", items:[
+      {n:D("Çoban","Choban salad","Чобан-салат"),d:D("təzə tərəvəzdən","fresh vegetables","из свежих овощей"),p:"6"},
+      {n:D("Pomidor albalı ilə","Tomato & cherry salad","Салат из помидоров с вишней"),p:"8"},
+      {n:D("Pomidor balzamik sousu ilə","Tomato with balsamic","Помидоры с бальзамиком"),p:"8"},
+      {n:D("Xırt-xırt badımcan","Crispy aubergine","Хрустящий баклажан"),p:"9"},
+      {n:D("Sezar salatı","Caesar salad","Салат Цезарь"),d:D("toyuq / krevetka / qızıl balıq","chicken / shrimp / salmon","курица / креветки / лосось"),p:"14/16/19"},
+      {n:D("Süzməli pomidor-xiyar","Tomato-cucumber with cream cheese","Помидоры-огурцы с крем-сыром"),p:"8"},
+      {n:D("Can əti salatı","Beef tenderloin salad","Салат с вырезкой"),p:"12"},
+      {n:D("Qızıl balıq sitrus sousu ilə","Salmon with citrus dressing","Лосось с цитрусовым соусом"),p:"20"},
+    ]},
+    { t:D("Qəlyanaltılar","Starters","Закуски"), ru:"Закуски", items:[
+      {n:D("Pendir assorti","Cheese platter","Сырная тарелка"),p:"14"},
+      {n:D("Turşu assorti","Pickle platter","Ассорти солений"),p:"8"},
+      {n:D("Tərəvəz buketi","Fresh vegetable platter","Ассорти свежих овощей"),p:"7"},
+      {n:D("Məzə assorti","Meze platter","Ассорти закусок"),d:D("tuna əzməsi, haydari, pərpətöyün, acılı əzmə","tuna pâté, haydari, herbs, spicy dip","паштет из тунца, хайдари, зелень, острая паста"),p:"16"},
+      {n:D("Zeytun assorti","Olive platter","Ассорти оливок"),p:"6,5"},
+      {n:D("Badımcan ruleti","Aubergine rolls","Рулет из баклажанов"),p:"9"},
+      {n:D("Ət assorti","Meat platter","Мясное ассорти"),p:"32"},
+      {n:D("Blinçik","Crêpes","Блинчики"),d:D("kəsmik / ət","curd / meat","творог / мясо"),p:"2,5/3"},
+      {n:D("Qutab","Qutab","Кутабы"),d:D("göyərti / balqabaq / ət","greens / pumpkin / meat","зелень / тыква / мясо"),p:"3/3/3,5"},
+      {n:D("Qatıq","Matsoni","Мацони"),p:"2,5"},
+      {n:D("Süzmə","Cream cheese","Крем-сыр"),p:"5"},
+    ]},
+    { t:D("Şorbalar","Soups","Супы"), ru:"Супы", items:[
+      {n:D("Mərci","Lentil soup","Чечевичный суп"),p:"7"},
+      {n:D("Çolpa şorbası","Chicken soup","Куриный суп"),p:"7"},
+      {n:D("Düşbərə","Dushbara","Суп с мини-пельменями"),p:"7"},
+      {n:D("Əvəlik şorbası","Sorrel soup","Суп со щавелём"),p:"7"},
+      {n:D("Göyərti","Green soup","Зелёный суп"),p:"7"},
+      {n:D("Dovğa","Dovga","Кисломолочный суп с зеленью"),p:"7"},
+      {n:D("Küftə","Azerbaijani meatball soup","Азербайджанские тефтели"),p:"14"},
+      {n:D("Piti","Piti","Пити"),d:D("quzu əti, gil qabda","lamb, in a clay pot","ягнёнок в глиняном горшке"),p:"14"},
+    ]},
+    { t:D("Uşaq menyusu","Kids","Детское меню"), ru:"Детское меню", items:[
+      {n:D("Uşaq səti","Kids set","Детский сет"),d:D("naqgets, kartof fri, pendir çubuqları, cappy","nuggets, fries, cheese sticks, juice","наггетсы, картофель фри, сырные палочки, сок"),p:"14"},
+    ]}
+   ]
+ },
+ { id:"sec-2", page:"4", title:D("İsti yeməklər & Balıq","Hot dishes & Fish","Горячее и рыба"), ru:"Горячие блюда · Рыба",
+   archive:{ tag:D("Xəzərdən","From the Caspian","С Каспия"),
+     h:D("Xəzərin nərə balığı","Sturgeon of the Caspian","Осётр Каспия"),
+     p:D("Xəzər dənizində onlarla nərə növü yaşayır, kürüsü isə əsrlərdir Azərbaycanda nəfis ləziz sayılır. İnqilabdan əvvəlki Bakı dünyanın ilk böyük neft mərkəzlərindən biri idi — torpaq həm neftlə, həm bərəkətlə zəngin.",
+         "Dozens of sturgeon species live in the Caspian, and their caviar has been prized in Azerbaijan for centuries. Pre-revolutionary Baku was one of the world's first great oil hubs — a land rich in both oil and abundance.",
+         "В Каспийском море обитают десятки видов осетровых, а их икра веками считалась деликатесом в Азербайджане. Дореволюционный Баку был одним из первых нефтяных центров мира — земля, богатая и нефтью, и изобилием."),
+     engrave:"sturgeon" },
+   groups:[
+    { t:D("İsti yeməklər","Hot dishes","Горячие блюда"), ru:"Горячие блюда", items:[
+      {n:D("Kefli beçə","Chicken in wine sauce","Цыплёнок в винном соусе"),p:"18"},
+      {n:D("Tabaka","Tabaka","Табака"),p:"16"},
+      {n:D("Çolpa çığırtması","Chicken with eggs, onion & tomato","Цыплёнок с яичницей, луком и помидорами"),p:"20"},
+      {n:D("Çolpa limon sousu ilə","Chicken in lemon sauce","Цыплёнок в лимонном соусе"),p:"19"},
+      {n:D("Çolpa portağal sousu ilə","Chicken in orange sauce","Цыплёнок в апельсиновом соусе"),p:"20"},
+      {n:D("Çolpa soyutma","Stewed chicken","Тушёный цыплёнок"),p:"20"},
+      {n:D("3 bacı dolması","Three-sisters dolma","Фаршированные овощи"),d:D("badımcan, pomidor, bibər","aubergine, tomato, pepper","баклажан, помидор, перец"),p:"11"},
+      {n:D("Yarpaq dolması","Vine-leaf dolma","Долма из виноградных листьев"),p:"11"},
+      {n:D("Tuşonka","Stewed beef","Тушёная говядина"),p:"11"},
+      {n:D("Cız-bız","Lamb offal fry","Жареные потрошки ягнёнка"),p:"18"},
+      {n:D("Ev sayağı qovurma","Home-style roast","Жаркое по-домашнему"),d:D("quzu / can əti","lamb / tenderloin","ягнёнок / вырезка"),p:"20/22"},
+      {n:D("Qaymaqlı can əti","Tenderloin in cream & mushrooms","Вырезка в сливочном соусе с грибами"),p:"16"},
+      {n:D("Nar qovurma","Roast in pomegranate sauce","Жаркое в гранатовом соусе"),d:D("quzu / can əti","lamb / tenderloin","ягнёнок / вырезка"),p:"20/22"},
+      {n:D("Qovurma Bağda","Bağda roast","Жаркое Багда"),p:"32"},
+      {n:D("Çoban qovurma","Shepherd's lamb roast","Жаркое по рецепту пастуха"),p:"25"},
+      {n:D("Quzu buğlaması","Steamed lamb with vegetables","Тушёный ягнёнок с овощами"),p:"25"},
+      {n:D("Dana sırdağı","Beef in sour sauce","Говядина в кислом соусе"),p:"24"},
+      {n:D("Dana qabırğa şirəli","Beef ribs in own juices","Говяжьи рёбра в своём соку"),p:"26"},
+      {n:D("Quzu maça şirəli","Lamb in own juices","Ягнёнок в своём соку"),p:"15"},
+      {n:D("Tava kababı","Pan kebab","Кебаб в сковороде"),p:"14"},
+      {n:D("Gürzə","Gurza dumplings","Азербайджанские пельмени «гюрза»"),p:"9"},
+      {n:D("Xəngəl","Khingal, Baku style","Хингал по-бакински"),p:"10"},
+      {n:D("Sac","Sac, on the griddle","Садж"),d:D("cücə / quzu / can əti","chicken / lamb / tenderloin","цыплёнок / ягнёнок / вырезка"),p:"26/28/30"},
+    ]},
+    { t:D("Balıq","Fish","Рыба"), ru:"Рыба", items:[
+      {n:D("Nərə balığı kababı","Sturgeon kebab","Шашлык из осетрины"),p:"75"},
+      {n:D("Nərə balığı buğlaması / sırdağı","Sturgeon steamed / in sour sauce","Осетрина тушёная / в кислом соусе"),p:"85"},
+      {n:D("Qızıl balıq tərəvəz ilə","Fried salmon with vegetables","Жареный лосось с овощами"),p:"40"},
+      {n:D("Farel","Trout, fried / grilled","Форель жареная / на гриле"),p:"20"},
+      {n:D("Dorado düyü ilə","Dorado with rice","Дорадо с рисом"),p:"22"},
+    ]}
+   ]
+ },
+ { id:"sec-3", page:"5", title:D("Kabablar, Plovlar, Qarnirlər","Kebabs, Pilaf, Sides","Кебабы, плов, гарниры"), ru:"Кебабы · Плов · Гарниры",
+   archive:{ tag:D("Günün resepti","Dish of the day","Рецепт дня"),
+     h:D("Şah plov — bayramın rəmzi","Shah plov — a feast in a crown","Шах-плов — символ праздника"),
+     p:D("Azərbaycanın ən təmtəraqlı plovlarından biri qat-qat hazırlanır: zəfəranlı düyü, ət, quru meyvələr və qoz-fındıq nazik lavaş «qazmaq» içinə bükülür. Əsrlər boyu bu plov ölkənin yolunu əks etdirib — İpək Yolu karvanlarından Bakının ziyafətlərinə qədər.",
+         "One of Azerbaijan's grandest pilafs, built in layers: saffron rice, meat, dried fruit and nuts wrapped in a thin lavash crust. For centuries this dish has mirrored the country's path — from Silk Road caravans to the banquets of Baku.",
+         "Один из самых роскошных пловов Азербайджана готовится слоями: шафранный рис, мясо, сухофрукты и орехи в тонкой лавашной корочке «газмаг». Веками этот плов отражал путь страны — от караванов Шёлкового пути до банкетов Баку."),
+     engrave:"wheat" },
+   groups:[
+    { t:D("Kabablar","Kebabs","Кебабы"), ru:"Кебабы", items:[
+      {n:D("Lülə","Lula kebab","Люля-кебаб"),d:D("quzu ətindən","lamb","из ягнёнка"),p:"11"},
+      {n:D("Tikə","Tika kebab","Шашлык"),d:D("quzu ətindən","lamb","из ягнёнка"),p:"12"},
+      {n:D("Antrikot","Lamb ribs","Рёбра ягнёнка"),p:"13"},
+      {n:D("Çolpa setka","Grilled chicken","Цыплёнок на мангале"),p:"16"},
+      {n:D("Xan kababı","Khan kebab","Шашлык из печени в курдючной сетке"),p:"10"},
+      {n:D("Dana basdırma","Beef kebab","Шашлык из говядины"),p:"14"},
+      {n:D("İçalat","Lamb offal kebab","Шашлык из потрошков"),p:"9"},
+      {n:D("Kartof lülə","Potato lula","Люля из картошки"),p:"7"},
+      {n:D("Tərəvəz kababı","Grilled vegetables","Овощи на мангале"),p:"1,5"},
+      {n:D("Kartof quyruq","Potato chips with fat-tail","Картофельные чипсы с курдюком"),p:"8"},
+    ]},
+    { t:D("Plovlar","Pilaf","Плов"), ru:"Плов", items:[
+      {n:D("Aş qara","Plov with lamb in plum sauce & chestnuts","Плов с ягнёнком в сливовом соусе с каштанами"),p:"29"},
+      {n:D("Fisincan plov","Plov with chicken in plum & walnut sauce","Плов с курицей в сливовом соусе с грецкими орехами"),p:"26"},
+      {n:D("Səbzi plov","Plov with lamb & herbs","Плов с ягнёнком и зеленью"),p:"28"},
+      {n:D("Cücə ləvəngi ilə plov","Plov with stuffed chicken & plums","Плов с фаршированным цыплёнком и сливой"),p:"30"},
+      {n:D("Plov albalı ilə","Plov with lamb in cherry sauce","Плов с ягнёнком в вишнёвом соусе"),p:"32"},
+      {n:D("Şüyüdlü plov","Plov with lamb & dill","Плов с ягнёнком и укропом"),p:"32"},
+      {n:D("Şah plov","Shah plov","Шах-плов"),p:"55"},
+    ]},
+    { t:D("Qarnirlər","Sides","Гарниры"), ru:"Гарниры", items:[
+      {n:D("Düyü","Boiled rice","Варёный рис"),p:"4"},
+      {n:D("Ev sayağı kartof","Home-style potatoes","Картошка по-домашнему"),p:"6"},
+      {n:D("Qarabaşaq","Buckwheat","Гречка"),p:"5"},
+      {n:D("Püre","Mashed potato","Картофельное пюре"),p:"5"},
+      {n:D("French fries","French fries","Картофель фри"),p:"6"},
+      {n:D("Qızardılmış tərəvəz","Fried vegetables","Жареные овощи"),p:"7"},
+      {n:D("Kartof quyruq","Potato with fat-tail","Картошка с курдюком"),p:"6"},
+    ]}
+   ]
+ },
+ { id:"sec-4", page:"6", title:D("İçkilər & Desertlər","Drinks & Desserts","Напитки и десерты"), ru:"Напитки · Десерты",
+   archive:{ tag:D("Lənkərandan","From Lankaran","Из Лянкярана"),
+     h:D("Çayın vətəni","The home of tea","Родина чая"),
+     p:D("Azərbaycanda çay təkcə içki deyil — qonaqpərvərliyin rəmzidir. İlk kommersiya çay plantasiyaları Lənkəran bölgəsində XX əsrin əvvəllərində salındı. Burada belə deyirlər: stəkanı ağzınadək doldurursansa, demək, qonağın getməsini istəyirsən.",
+         "In Azerbaijan tea is not merely a drink — it is the symbol of hospitality. The first commercial tea plantations were planted in the Lankaran region in the early 20th century. They say here: fill the glass to the brim and you are hinting the guest should leave.",
+         "В Азербайджане чай — не просто напиток, а символ гостеприимства. Первые промышленные чайные плантации появились в Лянкяранском регионе в начале XX века. Здесь говорят: наливаешь стакан до краёв — значит, намекаешь гостю, что пора уходить."),
+     engrave:"tea" },
+   groups:[
+    { t:D("İsti içkilər","Hot drinks","Горячие напитки"), ru:"Горячие напитки", items:[
+      {n:D("Çay","Tea","Чай"),p:"7"},
+      {n:D("Masala çayı","Masala tea","Чай масала"),p:"10"},
+      {n:D("Çaytikanı çayı","Sea-buckthorn tea","Облепиховый чай"),p:"10"},
+      {n:D("Zəncəfil çayı","Ginger tea","Имбирный чай"),p:"10"},
+      {n:D("Yasəmən çayı","Jasmine tea","Жасминовый чай"),p:"7,5"},
+      {n:D("Qarkadə çayı","Hibiscus tea","Каркаде"),p:"7,5"},
+    ]},
+    { t:D("Kofelər","Coffee","Кофе"), ru:"Кофе", items:[
+      {n:D("Espresso","Espresso","Эспрессо"),p:"5"},
+      {n:D("Double espresso","Double espresso","Двойной эспрессо"),p:"5"},
+      {n:D("Americano","Americano","Американо"),p:"6"},
+      {n:D("Cappuccino / latte","Cappuccino / latte","Капучино / латте"),p:"7"},
+      {n:D("Machiato","Macchiato","Макиато"),p:"7"},
+      {n:D("İce latte","Iced latte","Айс-латте"),p:"8"},
+    ]},
+    { t:D("Sərin içkilər","Cold drinks","Прохладительные"), ru:"Прохладительные", items:[
+      {n:D("Kola / fanta / sprite","Cola / fanta / sprite","Кола / фанта / спрайт"),p:"5"},
+      {n:D("Sirab","Sirab water","Сираб"),p:"3,5"},
+      {n:D("Sirab premium","Sirab premium","Сираб премиум"),p:"7"},
+      {n:D("Tonic","Tonic","Тоник"),p:"6"},
+      {n:D("Red Bull","Red Bull","Red Bull"),p:"8"},
+    ]},
+    { t:D("Bağda organic","Bağda organic","Bağda organic"), ru:"Bağda organic", items:[
+      {n:D("Limonad","Lemonade","Лимонад"),p:"7/13"},
+      {n:D("Kompot","Compote","Компот"),p:"7"},
+    ]},
+    { t:D("Təzə sıxılmış şirələr","Fresh juices","Свежевыжатые соки"), ru:"Свежевыжатые соки", items:[
+      {n:D("Alma","Apple","Яблоко"),p:"8"},
+      {n:D("Portağal","Orange","Апельсин"),p:"10"},
+      {n:D("Greypfrut","Grapefruit","Грейпфрут"),p:"12"},
+      {n:D("Kök","Carrot","Морковь"),p:"7"},
+    ]},
+    { t:D("Alkoqolsuz kokteyllər","Non-alcoholic cocktails","Безалкогольные коктейли"), ru:"Безалкогольные коктейли", items:[
+      {n:D("Kəndimiz","Kəndimiz","Кяндимиз"),p:"9"},
+      {n:D("Bağdan","Bağdan","Багдан"),p:"9"},
+      {n:D("Ağacdan","Ağacdan","Агаджан"),p:"9"},
+      {n:D("Kölgə","Kölgə","Кёльгя"),p:"9"},
+      {n:D("Tərəvətsən","Tərəvətsən","Тяравятсян"),p:"9"},
+      {n:D("Yaşılda","Yaşılda","Яшылда"),p:"8"},
+      {n:D("Gül kökü","Gül kökü","Гюль кёкю"),p:"10"},
+      {n:D("Çobansız","Çobansız","Чобансыз"),p:"11"},
+      {n:D("Dadbil","Dadbil","Дадбиль"),p:"11"},
+      {n:D("Hibis","Hibis","Хибис"),p:"8"},
+      {n:D("Mojito","Mojito","Мохито"),p:"10"},
+    ]},
+    { t:D("Desertlər","Desserts","Десерты"), ru:"Десерты", items:[
+      {n:D("Ballı tort","Honey cake","Медовый торт"),p:"12"},
+      {n:D("Cheesecake","Cheesecake","Чизкейк"),p:"12"},
+      {n:D("Paxlava","Pakhlava","Пахлава"),p:"9"},
+      {n:D("Meyvə assorti","Fruit platter","Ассорти фруктов"),p:"18"},
+      {n:D("Çərəzlər","Nuts","Орехи"),p:"15"},
+      {n:D("Dondurma","Ice cream","Мороженое"),p:"10"},
+    ]},
+    { t:D("Alkoqollu kokteyllər","Cocktails","Коктейли"), ru:"Коктейли", items:[
+      {n:D("Almaçı","Almaçı","Алмачы"),p:"12"},
+      {n:D("Portabağı","Portabağı","Портабагы"),p:"12"},
+      {n:D("Şaftaçı","Şaftaçı","Шафтачы"),p:"11"},
+      {n:D("Karvan","Karvan","Карван"),p:"12"},
+      {n:D("Qırmızı ay","Qırmızı ay","Красная луна"),p:"12"},
+      {n:D("İncəbel","İncəbel","Инджебель"),p:"12"},
+      {n:D("Pətək","Pətək","Пятяк"),p:"14"},
+      {n:D("Ağ gül","Ağ gül","Белая роза"),p:"14"},
+      {n:D("Mojito","Mojito","Мохито"),p:"12"},
+      {n:D("Long Island","Long Island","Лонг-Айленд"),p:"16"},
+      {n:D("Margarita","Margarita","Маргарита"),p:"14"},
+      {n:D("Cosmopolitan","Cosmopolitan","Космополитен"),p:"14"},
+      {n:D("Bloody Mary","Bloody Mary","Кровавая Мэри"),p:"14"},
+      {n:D("Cuba Libre","Cuba Libre","Куба Либре"),p:"15"},
+      {n:D("Tequila boom","Tequila boom","Текила бум"),p:"16"},
+      {n:D("Vodka sour","Vodka sour","Водка-сауэр"),p:"11"},
+    ]},
+    { t:D("Şərab & spirtli","Wine & spirits","Вино и крепкие"), ru:"Вино и крепкие", items:[
+      {n:D("Prosecco / Spumante","Prosecco / Spumante","Просекко / Спуманте"),d:D("şüşə","bottle","бутылка"),p:"55–60"},
+      {n:D("Rosé","Rosé","Розе"),d:D("şüşə","bottle","бутылка"),p:"57–59"},
+      {n:D("Ağ şərab","White wine","Белое вино"),d:D("şüşə","bottle","бутылка"),p:"45–110"},
+      {n:D("Qırmızı şərab","Red wine","Красное вино"),d:D("şüşə · seçim üçün soruşun","bottle · ask for the full list","бутылка · спросите полный лист"),p:"35–930"},
+      {n:D("Araq 50 ml","Vodka 50 ml","Водка 50 мл"),p:"5–8,5"},
+      {n:D("Tekila 50 ml","Tequila 50 ml","Текила 50 мл"),p:"7–10"},
+      {n:D("Viski 50 ml","Whiskey 50 ml","Виски 50 мл"),p:"11"},
+    ]}
+   ]
+ }
+];
+
+/* ============================================================
+   ENGRAVINGS (woodcut-style SVG, monochrome)
+   ============================================================ */
+const ENGRAVE = {
+  sturgeon:`<svg viewBox="0 0 260 110" aria-hidden="true"><g fill="none" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"><path d="M12 58 Q70 30 150 46 Q210 56 250 54 Q228 68 250 90 Q200 70 150 78 Q70 92 12 58Z"/><path d="M40 56 Q72 42 112 50 M52 60 Q84 52 118 58"/><path d="M126 50 Q146 36 156 28 M150 50 Q176 42 192 34 M168 66 Q196 72 216 76"/><circle cx="30" cy="56" r="2.6" fill="var(--ink)"/><path d="M18 58 q6 4 12 0"/></g></svg>`,
+  tea:`<svg viewBox="0 0 120 150" aria-hidden="true"><g fill="none" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"><path d="M34 40 h52 l-8 78 q-18 12 -36 0Z"/><path d="M34 40 q26 -10 52 0"/><path d="M86 60 q22 4 22 24 q0 18 -20 22"/><ellipse cx="60" cy="128" rx="30" ry="6"/><path d="M44 130 v8 h32 v-8" /><path d="M48 30 q12 -16 24 0"/></g></svg>`,
+  pomegranate:`<svg viewBox="0 0 120 130" aria-hidden="true"><g fill="none" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"><circle cx="60" cy="72" r="42"/><path d="M60 30 v-12 M54 22 l-6 -8 M66 22 l6 -8 M48 26 l-4 -6 M72 26 l4 -6"/><path d="M40 60 q20 14 40 0 M44 80 q16 12 32 0 M60 56 v40"/></g></svg>`,
+  wheat:`<svg viewBox="0 0 120 150" aria-hidden="true"><g fill="none" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"><path d="M60 140 V40"/><path d="M60 44 q-16 -6 -22 -22 q16 2 22 14 M60 44 q16 -6 22 -22 q-16 2 -22 14"/><path d="M60 64 q-16 -6 -22 -22 q16 2 22 14 M60 64 q16 -6 22 -22 q-16 2 -22 14"/><path d="M60 84 q-16 -6 -22 -22 q16 2 22 14 M60 84 q16 -6 22 -22 q-16 2 -22 14"/><path d="M60 30 q-6 -16 0 -26 q6 10 0 26"/></g></svg>`
+};
+
+/* ============================================================
+   RENDER
+   ============================================================ */
+let lang = (function(){ try{ return localStorage.getItem("bagda_lang")||"az"; }catch(e){ return "az"; } })();
+
+function buildNav(){
+  const nav = document.getElementById("menuNav");
+  nav.innerHTML = MENU.map((s,i)=>`<a href="#${s.id}" data-navi="${i}">${s.title[lang]}</a>`).join("");
+}
+
+function dishHTML(it){
+  const desc = it.d ? `<div class="d-desc">${it.d[lang]}</div>` : "";
+  return `<div class="dish">
+    <div class="d-main"><div class="d-name">${it.n[lang]}</div>${desc}</div>
+    <span class="leader"></span>
+    <span class="d-price">${it.p}<span class="cur">₼</span></span>
+  </div>`;
+}
+
+function groupHTML(g){
+  return `<div class="group">
+    <div class="group-title"><span>${g.t[lang]}</span><span class="gt-ru">${g.ru||""}</span></div>
+    ${g.items.map(dishHTML).join("")}
+  </div>`;
+}
+
+function archiveHTML(a){
+  const eng = a.engrave && ENGRAVE[a.engrave] ? `<div class="a-engrave">${ENGRAVE[a.engrave]}</div>` : "";
+  const cls = a.tag.az==="Günün resepti" ? "archive tip" : "archive";
+  return `<div class="${cls}">
+    <span class="a-tag">${a.tag[lang]}</span>
+    <h4>${a.h[lang]}</h4>
+    ${eng}
+    <p>${a.p[lang]}</p>
+  </div>`;
+}
+
+function sectionHTML(s){
+  // split groups into two balanced columns
+  const groups = s.groups;
+  const mid = Math.ceil(groups.length/2);
+  const colA = groups.slice(0,mid).map(groupHTML).join("");
+  const colB = groups.slice(mid).map(groupHTML).join("");
+  return `<section class="menu-sec" id="${s.id}">
+    <div class="wrap">
+      <div class="pagenum">${s.page}</div>
+      <div class="eyebrow"><svg class="rosette"><use href="#rosette"/></svg><span>${s.ru}</span></div>
+      <div class="sec-head">
+        <h2>${s.title[lang]}</h2>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-col">${colA}</div>
+        <div class="menu-col col-stack">
+          ${colB}
+          ${archiveHTML(s.archive)}
+        </div>
+      </div>
+    </div>
+    <div class="double-rule" style="margin-top:40px"></div>
+  </section>`;
+}
+
+function renderMenu(){
+  document.getElementById("menuRoot").innerHTML = MENU.map(sectionHTML).join("");
+}
+
+function applyUI(){
+  const t = UI[lang];
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const k = el.getAttribute("data-i18n");
+    if(t[k]!==undefined) el.textContent = t[k];
+  });
+  document.documentElement.lang = lang;
+}
+
+function setLang(l){
+  lang = l;
+  try{ localStorage.setItem("bagda_lang", l); }catch(e){}
+  document.querySelectorAll(".langs button").forEach(b=>{
+    b.setAttribute("aria-pressed", b.dataset.lang===l ? "true":"false");
+  });
+  applyUI();
+  buildNav();
+  renderMenu();
+  wireScrollSpy();
+}
+
+document.querySelectorAll(".langs button").forEach(b=>{
+  b.addEventListener("click", ()=>setLang(b.dataset.lang));
+});
+
+/* scroll spy for menu nav */
+let spyObserver=null;
+function wireScrollSpy(){
+  if(spyObserver) spyObserver.disconnect();
+  const links = [...document.querySelectorAll("#menuNav a")];
+  const map = {};
+  links.forEach(a=>map[a.getAttribute("href").slice(1)] = a);
+  spyObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.remove("active"));
+        if(map[e.target.id]) map[e.target.id].classList.add("active");
+      }
+    });
+  },{rootMargin:"-45% 0px -50% 0px"});
+  document.querySelectorAll(".menu-sec").forEach(s=>spyObserver.observe(s));
+}
+
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+// init
+buildNav();
+renderMenu();
+applyUI();
+document.querySelectorAll(".langs button").forEach(b=>{
+  b.setAttribute("aria-pressed", b.dataset.lang===lang ? "true":"false");
+});
+wireScrollSpy();
+</script>
+</body>
+</html>
